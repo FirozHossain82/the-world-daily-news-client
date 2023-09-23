@@ -38,10 +38,10 @@ const NewsCard = ({ news }) => {
             placeholderSymbol={<FaStar className="text-warning"></FaStar>}
             fullSymbol={<FaStar></FaStar>}
             ></Rating>
-            <span>{rating?.number}</span>
+            <span className="ms-2  ">{rating?.number}</span>
         </div>
         <div>
-            <FaRegEye/>{total_view}
+            <FaRegEye className="me-2 fs-4" />{total_view}
         </div>
       </Card.Footer>
     </Card>

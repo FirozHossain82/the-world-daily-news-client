@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import EditorsNavSide from "../../EditorsNavSide/EditorsNavSide.jsx";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
@@ -21,6 +22,7 @@ const LeftNav = () => {
           </p>
         ))}
       </div>
+      <EditorsNavSide></EditorsNavSide>
     </div>
   );
 };

@@ -4,13 +4,16 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+console.log("environment variable", import.meta.env.VITE_APIKEY);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyC7448YFT9lnfXZpthdo62qzqtoctWa_6Q",
-  authDomain: "the-world-daily-news.firebaseapp.com",
-  projectId: "the-world-daily-news",
-  storageBucket: "the-world-daily-news.appspot.com",
-  messagingSenderId: "64444941001",
-  appId: "1:64444941001:web:10486ea32946fbfad20318"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

@@ -8,8 +8,11 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -71,6 +74,11 @@ const Register = () => {
       setError(error.message);
     })
   }
+
+
+  const handleAccepted =(event) =>[
+    setAccepted(event.target.checked)
+  ]
 
   return (
     <div>
@@ -137,15 +145,17 @@ const Register = () => {
                 </div>
                 <Form.Group className="mb-0 mt-2" controlId="formBasicCheckbox">
                   <Form.Check
+                    onClick={handleAccepted}
                     type="checkbox"
                     name="accept"
-                    label="Accept Term & Condition"
+                    label={<>Accept <Link to='/terms'> Terms & Condition</Link></>}
                   />
                 </Form.Group>
 
                 <Button
                   variant="primary"
                   type="submit"
+                  disabled={!accepted}
                   style={{
                     backgroundColor: "white", // White background color for the button
                     borderRadius: "25px", // Rounded corners for the button

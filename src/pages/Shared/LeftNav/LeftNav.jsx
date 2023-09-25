@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import EditorsNavSide from "../../EditorsNavSide/EditorsNavSide.jsx";
+import useTitle from "../../../hooks/useTitle.jsx";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
-
+  useTitle('All Category')
   useEffect(() => {
     fetch("https://the-world-daily-news-server-mytoi8q3b-firozhossain82.vercel.app/categories")
       .then((res) => res.json())

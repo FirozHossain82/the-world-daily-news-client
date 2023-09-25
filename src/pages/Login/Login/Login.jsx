@@ -4,11 +4,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../../hooks/useTitle.jsx";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle('Login')
   console.log('login page location', location);
   const from = location.state?.from?.pathname || '/category/0';
 
